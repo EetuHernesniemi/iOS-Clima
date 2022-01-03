@@ -1,0 +1,6 @@
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+//Copy this template and edit the copy and add it to the xcLondonode project. By design the copy should represent launch environment configuration such as production, test or debug.
+
+OPEN_WEATHER_API_KEY = "" //open weather api key value goes here https://openweathermap.org/api

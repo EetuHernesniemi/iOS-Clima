@@ -9,7 +9,7 @@
 import Foundation
 
 struct WeatherManager {
-    let weatherUrl = "https://api.openweathermap.org/data/2.5/weather?appid=\(Bundle.main.object(forInfoDictionaryKey: "OPEN_WEATHER_API_KEY"))&units=metric" //q=London
+    let weatherUrl : String = "https://api.openweathermap.org/data/2.5/weather?appid=\(Environment.openWeatherApiKey)&units=metric"
     
     func fetchWeather(cityName: String) {
         let urlString = "\(weatherUrl)&q=\(cityName)"
