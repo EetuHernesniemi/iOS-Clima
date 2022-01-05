@@ -28,6 +28,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.endEditing(true)
         return true
     }
     
@@ -47,8 +48,18 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
         searchTextField.text = ""
     }
     
-    func didUpdateWeather(weather: WeatherModel) {
+    func didUpdateWeather(weatherManager: WeatherManager, weather: WeatherModel) {
         print(weather.temperature)
+        DispatchQueue.main.async {
+            self.temperatureLabel.text = weather.temperatureString
+            self.conditionImageView.image = UIImage(systemName: weather.conditionName)
+            self.cityLabel.text = weather.cityName
+        }
+        
+    }
+    
+    func didFailWithError(Error:Error) {
+        print(Error)
     }
     
 }
